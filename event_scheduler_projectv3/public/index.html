@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Scheduler</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Upload Image of Event Details</h2>
+        <input type="file" id="imageUpload" accept="image/*"><br><br>
+
+        <!-- Dropdown to select the calendar -->
+        <label for="calendarSelect">Choose Calendar:</label>
+        <select id="calendarSelect">
+            <!-- Add your calendar options here -->
+            <option value="Home">Home</option>
+            <option value="Work">Work</option>
+            <option value="Family">Family</option>
+        </select>
+        <br><br>
+
+        <!-- Input fields that appear when information is missing -->
+        <div id="manual-inputs" style="display: none;">
+            <h3>Some information was missing. Please provide the missing details:</h3>
+            <label for="manualEventName">Event Name:</label>
+            <input type="text" id="manualEventName" placeholder="Enter event name"><br><br>
+
+            <label for="manualLocation">Location:</label>
+            <input type="text" id="manualLocation" placeholder="Enter location"><br><br>
+
+            <label for="manualStartDate">Start Date and Time:</label>
+            <input type="datetime-local" id="manualStartDate"><br><br>
+
+            <label for="manualEndDate">End Date and Time:</label>
+            <input type="datetime-local" id="manualEndDate"><br><br>
+        </div>
+
+        <button id="extract-info-button" onclick="handleImageUpload()">Extract Information</button>
+        <button id="generate-script-button" onclick="generateAppleScript()" style="display: none;">Generate AppleScript</button>
+        <button id="run-script-button" onclick="runAppleScript()" style="display: none;">Run AppleScript</button>
+        
+        <div id="applescript-output"></div>
+    </div>
+
+    <!-- Load Tesseract.js from a CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/tesseract.js@2.1.0/dist/tesseract.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

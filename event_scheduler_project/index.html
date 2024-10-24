@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Scheduler</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="control-panel">
+            <h2>Event Scheduler</h2>
+            <label for="event-name">Event Name:</label>
+            <input type="text" id="event-name" placeholder="Event name"><br><br>
+
+            <label for="event-location">Event Location:</label>
+            <input type="text" id="event-location" placeholder="Event location"><br><br>
+
+            <label for="start-date">Start Date and Time:</label>
+            <input type="datetime-local" id="start-date"><br><br>
+
+            <label for="end-date">End Date and Time:</label>
+            <input type="datetime-local" id="end-date"><br><br>
+
+            <label for="calendar-name">Calendar Name:</label>
+            <input type="text" id="calendar-name" placeholder="Calendar name"><br><br>
+
+            <button onclick="generateScript()">Generate AppleScript</button>
+        </div>
+
+        <div class="code-panel">
+            <h2>Generated AppleScript</h2>
+            <pre id="applescript-output"></pre>
+            <button onclick="copyToClipboard()">Copy to Clipboard</button> <!-- Copy button -->
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
